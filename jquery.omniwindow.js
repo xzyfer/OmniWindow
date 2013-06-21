@@ -3,7 +3,15 @@
 // @author:   Rudenka Alexander (mur.mailbox@gmail.com)
 // @license:  MIT
 
-;(function($) {
+;(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function($) {
   "use strict";
   $.fn.extend({
     omniWindow: function(options) {
@@ -138,4 +146,4 @@
       });
     }
   });
-})(jQuery);
+}));
